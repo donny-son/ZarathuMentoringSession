@@ -15,7 +15,7 @@ CREATE (c:Company {name: 'National Cancer Center'});
 CREATE (s:School {name: 'Yonsei', lvl: 'bachelor', major: 'Applied Statistics'});
 CREATE (s:School {name: 'Yonsei', lvl: 'graduate', major: 'Statistics and Data Science'});
 CREATE (s:School {name: 'Yonsei', lvl: 'graduate', major: 'Business School'});
-CREATE (pr:Project {name: 'High Performance Computing Cluster', details: ['SLURM', 'Kubernetes']});
+CREATE (pr:Project {name: 'High Performance Computing Cluster', details: ['SLURM', 'Kubernetes', 'JupyterHub']});
 CREATE (pr:Project {name: 'Ophthalmology Research', details: ['Automation(Concurrent Extractor)', 'Analysis(Survival)', 'CV', 'Go', 'Visualization']});
 CREATE (pr:Project {name: 'ML Training Environment Containerization', details: ['Docker', 'Hydra', 'Speech Recognition']});
 CREATE (pr:Project {name: 'Court Auction Service', details: ['Python', 'Web Automation']});
