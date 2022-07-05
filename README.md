@@ -36,3 +36,4 @@ export $( grep -vE "^(#.*|\s*)$" .env ) && cypher-shell -f main.cql -u $NEO4J_US
 - Neo4j 소개
 - Go 활용 및 실습
 - Backend 개발 로드맵
+- Neovim & PPT
