@@ -15,6 +15,9 @@ CREATE (c:Company {name: 'National Cancer Center'});
 CREATE (s:School {name: 'Yonsei', lvl: 'bachelor', major: 'Applied Statistics'});
 CREATE (s:School {name: 'Yonsei', lvl: 'graduate', major: 'Statistics and Data Science'});
 CREATE (s:School {name: 'Yonsei', lvl: 'graduate', major: 'Business School'});
+CREATE (m:Meta {name: 'Startup'});
+CREATE (m:Meta {name: 'Hospital'});
+CREATE (m:Meta {name: 'School'});
 CREATE (pr:Project {name: 'High Performance Computing Cluster', details: ['SLURM', 'Kubernetes', 'JupyterHub']});
 CREATE (pr:Project {name: 'Ophthalmology Research', details: ['Automation(Concurrent Extractor)', 'Analysis(Survival)', 'CV', 'Go', 'Visualization']});
 CREATE (pr:Project {name: 'ML Training Environment Containerization', details: ['Docker', 'Hydra', 'Speech Recognition']});
@@ -31,6 +34,10 @@ MATCH
     (pa:Person {name: '박상언'}),
     (ji:Person {name: '진익훈'}),
     (eo:Person {name: '어준경'}),
+
+    (startup:Meta {name: 'Startup'}),
+    (hospital:Meta {name: 'Hospital'}),
+    (school:Meta {name: 'School'}),
 
     (za: Company {name: 'Zarathu'}),
     (ba: Company {name: 'BagStation'}),
@@ -52,6 +59,17 @@ MATCH
     (lawmap:Project {name: 'Legislation Monitoring System w/ GraphDB'}),
     (hgs:Project {name: 'Social Platform for solving local problems'})
 CREATE 
+    (za)-[:IS_A]->(startup),
+    (ba)-[:IS_A]->(startup),
+    (si)-[:IS_A]->(startup),
+    (Bulkrum)-[:IS_A]->(startup),
+    (nc)-[:IS_A]->(hospital),
+    (sa)-[:IS_A]->(hospital),
+    (nc)-[:IS_A]->(school),
+    (yondas)-[:IS_A]->(school),
+    (yonbiz)-[:IS_A]->(school),
+    (yonstat)-[:IS_A]->(school),
+
     (me)-[:WORKED_FOR]->(za),
     (me)-[:WORKED_FOR]->(ba),
     (me)-[:WORKED_FOR]->(si),
